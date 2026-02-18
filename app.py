@@ -17,24 +17,24 @@ if st.button("Check Book"):
   if user_input.strip() == "":
     st.warning("Please enter a book title.")
 elif user_input in books:
-st.success("The book exists in the database!")
+  st.success("The book exists in the database!")
 else:
-st.error("The book is NOT in the database.")
+  st.error("The book is NOT in the database.")
 
 # Създаваме празен списък
 if "books" not in st.session_state:
-st.session_state.books = []
+  st.session_state.books = []
 # Полета за въвеждане
 title = st.text_input("Заглавие")
 author = st.text_input("Автор")
 # Бутон за добавяне
 if st.button("Добави книга"):
-book = {
-"title": title,
-"author": author
-}
-st.session_state.books.append(book)
-st.success("Книгата е добавена!")
+  book = {
+  "title": title,
+  "author": author
+  }
+  st.session_state.books.append(book)
+  st.success("Книгата е добавена!")
 # Показване на книгите
 st.write("### Списък с книги:")
 st.write(st.session_state.books)
